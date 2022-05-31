@@ -34,11 +34,11 @@
 
     
 
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" (change)="selectedValue($event)" aria-label="Default select example">
         <option selected>Category</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="cricket">One</option>
+        <option value="Tennis">Two</option>
+        <option value="Basketball">Three</option>
     </select>
     
 </div>

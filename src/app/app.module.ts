@@ -11,6 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { CartComponent } from './cart/cart.component';
 import { InfoPipe } from './info.pipe';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 
 
@@ -20,6 +21,7 @@ const routes:Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:MainPageComponent},
   {path:'cart',component:CartComponent},
+  {path:'productInfo',component:ProductInfoComponent},
   
   {path:'**',component:MainPageComponent},
   
@@ -34,7 +36,8 @@ const routes:Routes = [
     MainPageComponent,
     HomePageComponent,
     CartComponent,
-    InfoPipe
+    InfoPipe,
+    ProductInfoComponent
 
   
   
@@ -50,7 +53,7 @@ const routes:Routes = [
     RouterModule.forRoot(routes),
     NgxSliderModule
   ],
-  providers: [],
+  providers: [HomePageComponent,LeftComponentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

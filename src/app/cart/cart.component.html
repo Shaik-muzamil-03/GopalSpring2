@@ -1,8 +1,18 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <div class="container-fluid"><h1>Your Cart</h1></div>
 <p>{{num}} added products</p>
-<table>
-    <tr *ngFor="let x of products">
-        {{x}}
+<table class="table">
+   
+    <tr *ngFor="let x of product">
+        <table class = "table">
+        <th>{{x.name}}</th>
+        <tr><b>SportType:</b>{{x.sportType}}</tr>
+        <tr><b>Cost Of Product:</b> {{x.cost|currency:'INR'}}</tr>       
+        <tr><b>Discount Coupon Applied:</b> {{x.discount.discountCoupon}}</tr>
+        <tr><b>Discount Percentage:</b>{{x.discount.discountPercentage}}% {{x.discount.discountType}}</tr>
+        <tr><b>Offered Price: {{(x.cost-x.discount.discountPercentage/100*x.cost)|currency:'INR'}}</b></tr>
+        <tr><button>Place Order</button></tr>
+        </table>
+        <hr>
     </tr>
 </table>

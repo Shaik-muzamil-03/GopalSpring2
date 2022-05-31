@@ -1,5 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { ProdoctsService } from '../prodocts.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,25 +11,32 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
    service:CartService
    num:number;
-   products:string[]=[];
+  
+   productService:ProdoctsService;
+   product:any[]=[];
+   
+
 
  
 
-  constructor(service1:CartService) { 
+  constructor(service1:CartService,service2:ProdoctsService) { 
+    this.productService=service2;
     this.service=service1;
     this.num = this.service.value;
-    for(let i=0; i<this.num;i++){
-      let name =this.service.products[i].name;
-      this.products[i]=name;
-      console.log(this.products[i]);
-    }
+    this.product=this.productService.products;
+    console.log(this.product);
+    
+
+   
    
   }
+
 
   
 
 
   ngOnInit(): void {
+  
   }
  
 }

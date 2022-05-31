@@ -12,9 +12,9 @@
     <tr *ngFor="let product of arr">
       <th scope="row">{{product.iD}}</th>
       <td><img src="/assets/product.png"  width="100" height="100"></td>
-      <td><h5>{{product.name}}</h5>
+      <td><h5><a #p name="{{product.name}}" routerLink="productInfo" (click)="sendProduct(p.name)">{{product.name}}</a></h5>
           <p>{{product.info|info}}</p>
-          <p><button #link name="{{product.name}}" value ='home' (click) = "sendNumber(link.name,link.value)">AddToCart</button></p>
+          <p><button #link  name="{{product.name}}"  value ='home' (click) = "sendNumber(link.name,link.value,$event)">AddToCart</button></p>
       </td>
       <td>{{product.cost|currency : 'INR'}}</td>
     </tr>
