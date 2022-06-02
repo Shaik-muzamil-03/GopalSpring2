@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HomePageComponent } from './home-page/home-page.component';
-import { LeftComponentComponent } from './left-component/left-component.component';
+
+
 
 
 @Injectable({
@@ -14,12 +14,12 @@ export class ProdoctsService {
   rootEndpoint:string='http://localhost:8080/store/'
   AllProductsEndPoint:string = this.rootEndpoint+'products';
   private http:HttpClient;
-  home:HomePageComponent;
+
   
   products:any[]=[];
-  constructor( http1:HttpClient,home1:HomePageComponent) {
+  constructor( http1:HttpClient) {
     this.http=http1
-    this.home=home1;
+   
     
    }
       
@@ -35,7 +35,7 @@ export class ProdoctsService {
     this.products.push(obj);
 
   }
-  arr:any[]=[];
+  /*arr:any[]=[];
   filterpush(arr1:any[]){
     this.arr=[];
     this.arr=arr1;
@@ -43,7 +43,7 @@ export class ProdoctsService {
 
 
 
-  }
+  }*/
 
 }
 

@@ -3,7 +3,22 @@
 <div class="container-fluid">
 
   <h1>Online Sports Store</h1>
+  <table>
+  <tr>
   <h2>Welcome</h2>
+  <button (click)="openForm()">login</button>
+  <div class="form-popup" id="myForm" [ngStyle]="{'display':display}">
+    <form class="form-container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="username" name="username" [(ngModel)]="data.username" required>
+    <label><b>password</b></label>
+    <input type="password" placeholder="password" name="password" [(ngModel)]="data.password" required >
+    <button type="submit" class="btn" (click)="formSubmit()">Login</button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+    </form>
+  </div>
+  </tr> 
+  </table> 
   
   
 </div>

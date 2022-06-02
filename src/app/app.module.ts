@@ -5,13 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TopComponentComponent } from './top-component/top-component.component';
-import { LeftComponentComponent } from './left-component/left-component.component';
+
 import { MainPageComponent } from './main-page/main-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { CartComponent } from './cart/cart.component';
 import { InfoPipe } from './info.pipe';
 import { ProductInfoComponent } from './product-info/product-info.component';
+
+import { FormsModule } from '@angular/forms';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -22,6 +25,8 @@ const routes:Routes = [
   {path:'home',component:MainPageComponent},
   {path:'cart',component:CartComponent},
   {path:'productInfo',component:ProductInfoComponent},
+  {path:'Register',component:RegistrationComponent},
+ 
   
   {path:'**',component:MainPageComponent},
   
@@ -32,12 +37,14 @@ const routes:Routes = [
   declarations: [
     AppComponent,
     TopComponentComponent,
-    LeftComponentComponent,
+   
     MainPageComponent,
     HomePageComponent,
     CartComponent,
     InfoPipe,
-    ProductInfoComponent
+    ProductInfoComponent,
+    RegistrationComponent,
+   
 
   
   
@@ -51,9 +58,10 @@ const routes:Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    NgxSliderModule
+    NgxSliderModule,
+    FormsModule,
   ],
-  providers: [HomePageComponent,LeftComponentComponent],
+  providers: [HomePageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

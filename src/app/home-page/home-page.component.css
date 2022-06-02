@@ -1,3 +1,15 @@
 .table{
   width: 100%;
 }
+.container-sm{
+  color: bisque;
+  margin-left: 1mm;
+  background-color: brown;
+  margin-top: 1mm;
+  width: 70%;
+  text-align: center;
+  border-radius: 5%;
+}
+.mylink{
+  color: antiquewhite;
+}

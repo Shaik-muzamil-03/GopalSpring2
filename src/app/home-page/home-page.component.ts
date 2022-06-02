@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
   router:Router
   root:string="productInfo";
   arr:any[]=[];
+  arr1:any[]=[];
 
   
   constructor(service1:ProdoctsService,cart1:CartService,router1:Router) { 
@@ -34,7 +35,7 @@ export class HomePageComponent implements OnInit {
        if(a.name==name){
         this.service.cartProduct(a);
        }
-     })
+     });
 
     
     
@@ -43,6 +44,7 @@ export class HomePageComponent implements OnInit {
     this.service.getAllProducts().subscribe(data=>{
       console.log(data);
       this.arr=data;
+      this.arr1=data;
    
       console.log(this.arr);
       
@@ -66,10 +68,8 @@ sendProduct(name:string){
 
 }
 
-filterMethod(arr1:any[]){
-  this.arr=[];
-  this.arr=arr1;
-}
+
+
 
 
   ngOnInit(): void {

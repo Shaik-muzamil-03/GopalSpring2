@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {UserDetails} from './login-details';
-import {UserDetailsResponse} from './login-details-response';
+
 import {  Observable } from 'rxjs';
+import { Login } from './login';
+import { LoginResponse } from './login-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyAppServiceService {
 
-  rootEndPoint:string = 'http://localhost:8080/home'
-  LoginEndpoint:string = this.rootEndPoint+'user/logout'
+  rootEndPoint:string = 'http://localhost:8080/home';
+  LoginEndpoint:string = this.rootEndPoint+'/user/login';
   constructor(private http:HttpClient) { }
 
-  doLoginAction(loginDetails:UserDetails):Observable<UserDetailsResponse>
+  doLoginAction(loginDetails:Login):Observable<LoginResponse>
   {
-    return this.http.post<UserDetailsResponse>(`${this.LoginEndpoint}`,loginDetails);
+    return this.http.post<LoginResponse>(`${this.LoginEndpoint}`,loginDetails);
   }
 }
